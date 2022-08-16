@@ -1,0 +1,18 @@
+
+
+
+ <div class="container">
+<div *ngFor="let product of products">
+
+
+
+    <h3 class="title">{{product.attributes.Title}}</h3>
+    <img [src]=" server + product.attributes.ProductImageFront.data.attributes.formats.small.url ">
+
+
+</div>
+
+<button  *ngIf="showLoadBtn" class="btn btn-primary" (click)="loadMore()">Load More</button>
+<div class="loader" *ngIf="loading">Loading content. Please wait...</div>
+<div *ngIf="!showLoadBtn" class="message">No more data to load</div>
+</div>
